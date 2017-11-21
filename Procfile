@@ -1,1 +1,1 @@
-web: gunicorn delbot.wsgi --log-file -
+web: python app.py
