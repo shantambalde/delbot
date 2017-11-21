@@ -9,6 +9,6 @@ admin.autodiscover()
 # url(r'^blog/', include('blog.urls')),
 
 urlpatterns = [
-    url(r'^$',app.py, name='index'),
+    url(r'^$',app.index, name='index'),
 ]
 
