@@ -49,6 +49,10 @@ def after_request(response):
 
 if __name__ == '__main__':
     try:
-        app.run('localhost', port = 5000, debug = True, use_reloader = False)
+        if os.environ.get('APP_LOCATION') == 'heroku':
+            run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+        else:
+            run(host='localhost', port=5000, debug=True)
+
     except Exception, e:
         print e
